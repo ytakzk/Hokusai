@@ -1,0 +1,25 @@
+{
+  "name": "Hokusai",
+  "version": "0.1.0",
+  "summary": "A short description of Hokusai.",
+  "description": "                       An optional longer description of Hokusai\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/Hokusai",
+  "license": "MIT",
+  "authors": {
+    "ytakzk": "shyss.ak@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/Hokusai.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "Hokusai": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
