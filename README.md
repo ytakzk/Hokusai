@@ -75,6 +75,6 @@ hokusai.colors = HOKColors(
 ytakzk  
  [http://ytakzk.me](http://ytakzk.me)
  
- ## License
+## License
 Hokusai is released under the MIT license.  
 See LICENSE for details.
