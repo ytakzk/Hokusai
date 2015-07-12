@@ -7,59 +7,135 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		600FD48A72594BDBB0AB3DA7 /* Pods_Hokusai_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF36DA50C08335086C8C6B75 /* Pods_Hokusai_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		52E64DA41B52A27A0020B894 /* Hokusai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64DA31B52A27A0020B894 /* Hokusai.swift */; };
+		52E64DA91B52AA890020B894 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E64DA81B52AA890020B894 /* ThumbnailCell.swift */; };
+		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A785B933C4960F498676CFE2 /* Pods_Hokusai_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEEEE5480B119E7A880B590 /* Pods_Hokusai_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F7C5FA1C9D6E6889BA6AC363 /* Pods_Hokusai_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958E291B78B2CE8431BA7A32 /* Pods_Hokusai_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = Hokusai;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		607FACE51AFB9204008FA782 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = Hokusai_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01895D80E861B62013FDBBEC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1156475B31036E47BEB91061 /* Pods-Hokusai_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1A1D560800BCB094C70FFE34 /* Pods-Hokusai_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1DEEEE5480B119E7A880B590 /* Pods_Hokusai_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hokusai_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C7E8EBAD1448B36DEFF7DE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		337A074931DFE9AE65B6E350 /* Pods-Hokusai_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		52E64DA31B52A27A0020B894 /* Hokusai.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hokusai.swift; sourceTree = "<group>"; };
+		52E64DA81B52AA890020B894 /* ThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* Hokusai_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hokusai_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		607FACE51AFB9204008FA782 /* Hokusai_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hokusai_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7844B623BFEEAC40DC28DCC7 /* Pods-Hokusai_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF36DA50C08335086C8C6B75 /* Pods_Hokusai_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hokusai_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDF45771EC4DF9607F08A37E /* Pods-Hokusai_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D5B5807B2E9642E67C9956BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		D8496FD9325C1F36ABBC8AC2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		E48B81A67D7EC844D443222C /* Hokusai.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Hokusai.podspec; path = ../Hokusai.podspec; sourceTree = "<group>"; };
+		6CE3626B92A05FF02C94B3E0 /* Pods-Hokusai_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		958E291B78B2CE8431BA7A32 /* Pods_Hokusai_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hokusai_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE32B3A83DE790AAD61564ED /* Hokusai.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Hokusai.podspec; path = ../Hokusai.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A785B933C4960F498676CFE2 /* Pods_Hokusai_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACE21AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				600FD48A72594BDBB0AB3DA7 /* Pods_Hokusai_Tests.framework in Frameworks */,
+				F7C5FA1C9D6E6889BA6AC363 /* Pods_Hokusai_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4FD3C1123D21F49C4A78B963 /* Frameworks */ = {
+		52E64DA21B52A25D0020B894 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AF36DA50C08335086C8C6B75 /* Pods_Hokusai_Tests.framework */,
+				52E64DA31B52A27A0020B894 /* Hokusai.swift */,
 			);
-			name = Frameworks;
+			name = Classes;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		5B8F66D356A83524B62D8543 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CE3626B92A05FF02C94B3E0 /* Pods-Hokusai_Example.debug.xcconfig */,
+				1156475B31036E47BEB91061 /* Pods-Hokusai_Example.release.xcconfig */,
+				1A1D560800BCB094C70FFE34 /* Pods-Hokusai_Tests.debug.xcconfig */,
+				337A074931DFE9AE65B6E350 /* Pods-Hokusai_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				52E64DA21B52A25D0020B894 /* Classes */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD21AFB9204008FA782 /* Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				84F5EC17E5602C5E3C9493DD /* Pods */,
-				4FD3C1123D21F49C4A78B963 /* Frameworks */,
+				5B8F66D356A83524B62D8543 /* Pods */,
+				EBC7AE8445AE017B5CCAC20A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACE51AFB9204008FA782 /* Tests.xctest */,
+				607FACD01AFB9204008FA782 /* Hokusai_Example.app */,
+				607FACE51AFB9204008FA782 /* Hokusai_Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACD21AFB9204008FA782 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				52E64DA81B52AA890020B894 /* ThumbnailCell.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+			);
+			name = Example;
+			path = Hokusai;
+			sourceTree = "<group>";
+		};
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD41AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
@@ -82,43 +158,64 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				E48B81A67D7EC844D443222C /* Hokusai.podspec */,
-				D8496FD9325C1F36ABBC8AC2 /* README.md */,
-				D5B5807B2E9642E67C9956BF /* LICENSE */,
+				CE32B3A83DE790AAD61564ED /* Hokusai.podspec */,
+				01895D80E861B62013FDBBEC /* README.md */,
+				29C7E8EBAD1448B36DEFF7DE /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		84F5EC17E5602C5E3C9493DD /* Pods */ = {
+		EBC7AE8445AE017B5CCAC20A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7844B623BFEEAC40DC28DCC7 /* Pods-Hokusai_Tests.debug.xcconfig */,
-				BDF45771EC4DF9607F08A37E /* Pods-Hokusai_Tests.release.xcconfig */,
+				1DEEEE5480B119E7A880B590 /* Pods_Hokusai_Example.framework */,
+				958E291B78B2CE8431BA7A32 /* Pods_Hokusai_Tests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACE41AFB9204008FA782 /* Hokusai_Tests */ = {
+		607FACCF1AFB9204008FA782 /* Hokusai_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Hokusai_Tests" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Hokusai_Example" */;
 			buildPhases = (
-				5A756C6AD08F26B808313DF9 /* Check Pods Manifest.lock */,
-				607FACE11AFB9204008FA782 /* Sources */,
-				607FACE21AFB9204008FA782 /* Frameworks */,
-				607FACE31AFB9204008FA782 /* Resources */,
-				2D7AB1A254F4DE85272517E2 /* Embed Pods Frameworks */,
-				B7CD1BA6032940CAEB2A2E71 /* Copy Pods Resources */,
+				B3631EB2243BD48998775A19 /* Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				50E7CE1FC08CF62B06BBB2F0 /* Embed Pods Frameworks */,
+				4F17BFCC7139004CE8985613 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = Hokusai_Example;
+			productName = Hokusai;
+			productReference = 607FACD01AFB9204008FA782 /* Hokusai_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		607FACE41AFB9204008FA782 /* Hokusai_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Hokusai_Tests" */;
+			buildPhases = (
+				36FD538A0E9F8C6A6BBC6FFF /* Check Pods Manifest.lock */,
+				607FACE11AFB9204008FA782 /* Sources */,
+				607FACE21AFB9204008FA782 /* Frameworks */,
+				607FACE31AFB9204008FA782 /* Resources */,
+				D4CE6D91716793ECB421805F /* Embed Pods Frameworks */,
+				1BCAA7989D7570676FC76D39 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+			);
 			name = Hokusai_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* Hokusai_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -130,6 +227,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 607FACCF1AFB9204008FA782;
@@ -149,12 +249,23 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				607FACCF1AFB9204008FA782 /* Hokusai_Example */,
 				607FACE41AFB9204008FA782 /* Hokusai_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACE31AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,37 +276,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D7AB1A254F4DE85272517E2 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A756C6AD08F26B808313DF9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B7CD1BA6032940CAEB2A2E71 /* Copy Pods Resources */ = {
+		1BCAA7989D7570676FC76D39 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,9 +291,95 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		36FD538A0E9F8C6A6BBC6FFF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4F17BFCC7139004CE8985613 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50E7CE1FC08CF62B06BBB2F0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3631EB2243BD48998775A19 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D4CE6D91716793ECB421805F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				52E64DA41B52A27A0020B894 /* Hokusai.swift in Sources */,
+				52E64DA91B52AA890020B894 /* ThumbnailCell.swift in Sources */,
+				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACE11AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +389,33 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* Hokusai_Example */;
+			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDA1AFB9204008FA782 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDF1AFB9204008FA782 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {
@@ -305,10 +499,35 @@
 			};
 			name = Release;
 		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CE3626B92A05FF02C94B3E0 /* Pods-Hokusai_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hokusai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1156475B31036E47BEB91061 /* Pods-Hokusai_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hokusai/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7844B623BFEEAC40DC28DCC7 /* Pods-Hokusai_Tests.debug.xcconfig */;
+			baseConfigurationReference = 1A1D560800BCB094C70FFE34 /* Pods-Hokusai_Tests.debug.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -326,8 +545,9 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDF45771EC4DF9607F08A37E /* Pods-Hokusai_Tests.release.xcconfig */;
+			baseConfigurationReference = 337A074931DFE9AE65B6E350 /* Pods-Hokusai_Tests.release.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -347,6 +567,15 @@
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
 				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Hokusai_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
