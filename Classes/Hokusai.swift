@@ -299,10 +299,13 @@ public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Show the menu
     public func show() {
-        let rv = UIApplication.sharedApplication().keyWindow! as UIWindow
-        if rv.viewWithTag(HOKConsts().hokusaiTag) == nil {
-            view.tag = HOKConsts().hokusaiTag.hashValue
-            rv.addSubview(view)
+        if let rv = UIApplication.sharedApplication().keyWindow {
+            if rv.viewWithTag(HOKConsts().hokusaiTag) == nil {
+                view.tag = HOKConsts().hokusaiTag.hashValue
+                rv.addSubview(view)
+            }
+        } else {
+            return
         }
         
         // This is needed to retain this instance.
