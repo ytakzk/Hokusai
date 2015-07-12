@@ -1,6 +1,0 @@
-framework module Pods_Hokusai_Tests {
-  umbrella header "Pods-Hokusai_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
