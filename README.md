@@ -21,7 +21,7 @@ pod 'Hokusai'
 ![Demo](https://raw.githubusercontent.com/wiki/ytakzk/Hokusai/images/demo.gif)
 
 ## Hokusai Usage
-
+Import Hokusai then use the following codes in some function.
 ```
 let hokusai = Hokusai()
 
@@ -31,9 +31,7 @@ hokusai.addButton("Button 1") {
 }
 
 // Add a button with a selector
-hokusai.addButton("Button 2") {
-    println("Oribe")
-}
+hokusai.addButton("Button 2", target: self, selector: Selector("button2Pressed"))
 
 // Set a font name. Default is AvenirNext-DemiBold.
 hokusai.fontName = "Verdana-Bold"
@@ -43,6 +41,27 @@ hokusai.colorScheme = HOKColorScheme.Enshu
 
 // Show Hokusai
 hokusai.show()
+
+// Selector for the button 2
+func button2Pressed() {
+    println("Oribe")
+}
+```
+
+#### Add a button with a closure
+```
+hokusai.addButton("Button Title") {
+    // Do anything you want
+}
+```
+
+#### Add a button with a selector
+```
+hokusai.addButton("Button Title", target: self, selector: Selector("buttonPressed"))
+
+func buttonPressed() {
+    // Do anything you want
+}
 ```
 
 ## Color schemes
