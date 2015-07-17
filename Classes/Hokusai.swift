@@ -86,7 +86,7 @@ public enum HOKColorScheme {
     }
 }
 
-public class HOKColors: NSObject {
+final public class HOKColors: NSObject {
     var backgroundColor: UIColor
     var buttonColor: UIColor
     var cancelButtonColor: UIColor
@@ -100,7 +100,7 @@ public class HOKColors: NSObject {
     }
 }
 
-public class HOKButton: UIButton {
+final public class HOKButton: UIButton {
     var target:AnyObject!
     var selector:Selector!
     var action:(()->Void)!
@@ -127,7 +127,7 @@ public class HOKButton: UIButton {
     }
 }
 
-public class HOKMenuView: UIView {
+final public class HOKMenuView: UIView {
     var colorScheme = HOKColorScheme.Hokusai
     
     public let kDamping: CGFloat               = 0.7
@@ -210,7 +210,7 @@ public class HOKMenuView: UIView {
     }
 }
 
-public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
+final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     // Views
     private var menuView = HOKMenuView()
     private var buttons  = [HOKButton]()
