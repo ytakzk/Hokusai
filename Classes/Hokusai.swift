@@ -117,11 +117,11 @@ public class HOKButton: UIButton {
     }
     
     func setFontName(fontName: String?) {
-        var name = kDefaultFont
-        if (fontName == nil || fontName?.isEmpty == true) {
-            name = kDefaultFont
+        let name:String
+        if let fontName = fontName where !fontName.isEmpty {
+            name = fontName
         } else {
-            name = fontName!
+            name = kDefaultFont
         }
         self.titleLabel?.font = UIFont(name: name, size:kFontSize)
     }
