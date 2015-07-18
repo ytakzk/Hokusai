@@ -1,3 +1,4 @@
 language: objective-c
+osx_image: xcode6.4
 script:
 - xctool -workspace Example/Hokusai.xcworkspace -scheme Hokusai-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
