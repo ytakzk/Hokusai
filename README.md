@@ -22,7 +22,8 @@ pod 'Hokusai'
 ![Demo](https://raw.githubusercontent.com/wiki/ytakzk/Hokusai/images/demo.gif)
 
 ## Hokusai Usage
-Import Hokusai then use the following codes in some function.
+Import Hokusai ```import Hokusai``` then use the following codes in some function except for viewDidLoad.  
+
 ```
 let hokusai = Hokusai()
 
@@ -34,10 +35,10 @@ hokusai.addButton("Button 1") {
 // Add a button with a selector
 hokusai.addButton("Button 2", target: self, selector: Selector("button2Pressed"))
 
-// Set a font name. Default is AvenirNext-DemiBold.
+// Set a font name. AvenirNext-DemiBold is the default.
 hokusai.fontName = "Verdana-Bold"
 
-// Select a color scheme
+// Select a color scheme. Just below you can see the dafault sets of schemes.
 hokusai.colorScheme = HOKColorScheme.Enshu
 
 // Show Hokusai
@@ -81,7 +82,7 @@ public enum HOKColorScheme {
 }
 ```
 
-Or you can use your designed colors.
+Or you can use your favorite color combination.
 ```
 hokusai.colors = HOKColors(
     backGroundColor: UIColor.blackColor(),
