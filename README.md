@@ -10,7 +10,8 @@ This is inspired by Skype's iOS app.
 
 ## Installation
 
-Drop in the Classes folder to your Xcode project or
+Drop in the Classes folder to your Xcode project.  
+You can also use cocoapods or Carthage.
 
 #### Using [cocoapods](http://cocoapods.org/)
 
