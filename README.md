@@ -7,6 +7,7 @@ This is inspired by Skype's iOS app.
 [![Version](https://img.shields.io/cocoapods/v/Hokusai.svg?style=flat)](http://cocoapods.org/pods/Hokusai)
 [![Platform](https://img.shields.io/cocoapods/p/Hokusai.svg?style=flat)](http://cocoapods.org/pods/Hokusai)
 [![CI Status](http://img.shields.io/travis/ytakzk/Hokusai.svg?style=flat)](https://travis-ci.org/ytakzk/Hokusai)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Installation
 
