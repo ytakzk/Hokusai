@@ -305,6 +305,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
                 rv.addSubview(view)
             }
         } else {
+            println("Hokusai::  You have to call show() after the controller has appeared.")
             return
         }
         
@@ -341,8 +342,10 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         // Animations
         animationWillStart()
         
-        // Debug alert
-        if (buttons.count > 6) {
+        // Debug
+        if (buttons.count == 0) {
+            println("Hokusai::  The menu has no item yet.")
+        } else if (buttons.count > 6) {
             println("Hokusai::  The menu has lots of items.")
         }
     }
