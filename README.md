@@ -10,15 +10,7 @@ This is inspired by Skype's iOS app.
 
 ## Installation
 
-Drop in the Classes folder to your Xcode project.
-
-#### Using [Carthage](https://github.com/Carthage/Carthage)
-
-Add `github "ytakzk/Hokusai" to your `Cartfile` and run `carthage update`. If unfamiliar with Carthage then checkout their [Getting Started section](https://github.com/Carthage/Carthage#getting-started).
-
-```
-github "ytakzk/Hokusai
-```
+Drop in the Classes folder to your Xcode project or
 
 #### Using [cocoapods](http://cocoapods.org/)
 
@@ -27,6 +19,14 @@ Add `pod 'Hokusai'` to your `Podfile` and run `pod install`. Also add `use_frame
 ```
 use_frameworks!
 pod 'Hokusai'
+```
+
+#### Using [Carthage](https://github.com/Carthage/Carthage)
+
+Add `github "ytakzk/Hokusai" to your `Cartfile` and run `carthage update`. If unfamiliar with Carthage then checkout their [Getting Started section](https://github.com/Carthage/Carthage#getting-started).
+
+```
+github "ytakzk/Hokusai
 ```
 
 ## Demo
