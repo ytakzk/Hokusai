@@ -27,7 +27,7 @@ pod 'Hokusai'
 Add `github "ytakzk/Hokusai" to your `Cartfile` and run `carthage update`. If unfamiliar with Carthage then checkout their [Getting Started section](https://github.com/Carthage/Carthage#getting-started).
 
 ```
-github "ytakzk/Hokusai
+github "ytakzk/Hokusai"
 ```
 
 ## Demo
