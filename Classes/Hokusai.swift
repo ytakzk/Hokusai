@@ -247,6 +247,33 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         tapGesture.numberOfTapsRequired = 1
         tapGesture.delegate = self
         self.view.addGestureRecognizer(tapGesture)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onOrientationChange:", name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    func onOrientationChange(notification: NSNotification){
+
+        kButtonWidth = view.frame.width * 0.8
+
+        let menuHeight = CGFloat(buttons.count + 2) * kButtonInterval + CGFloat(buttons.count) * kButtonHeight
+        menuView.frame = CGRect(
+            x: 0,
+            y: view.frame.height - menuHeight,
+            width: view.frame.width,
+            height: menuHeight
+        )
+        
+        menuView.shapeLayer.frame         = menuView.frame
+        menuView.shapeLayer.bounds.origin = menuView.frame.origin
+        menuView.shapeLayer.layoutIfNeeded()
+        menuView.layoutIfNeeded()
+
+        for var i = 0; i < buttons.count; i++ {
+            let btn = buttons[i]
+            btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
+            btn.center = CGPoint(x: view.center.x, y: -kButtonHeight * 0.25 + (kButtonHeight + kButtonInterval) * CGFloat(i + 1))
+        }
+        self.view.layoutIfNeeded()
     }
     
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
