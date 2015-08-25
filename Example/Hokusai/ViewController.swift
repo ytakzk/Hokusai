@@ -72,6 +72,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // Set a font name. Default is AvenirNext-DemiBold.
         hokusai.fontName = "Verdana-Bold"
+
+        // Change a title for cancel button (Default is Cancel)
+        hokusai.cancelButtonTitle = "Done"
+
+        if indexPath.row == 0 {
+            // Add a callback for cancel button
+            hokusai.cancelButtonAction = {
+                println("canceled")
+            }
+        }
         
         // Select a color scheme
         if indexPath.row < items.count {

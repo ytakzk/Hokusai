@@ -57,10 +57,19 @@ hokusai.colorScheme = HOKColorScheme.Enshu
 // Show Hokusai
 hokusai.show()
 
-// Selector for the button 2
+// Selector for button 2
 func button2Pressed() {
     println("Oribe")
 }
+
+// Change a title for cancel button (Default is Cancel)
+hokusai.cancelButtonTitle = "Done"
+
+// Add a callback for cancel button
+hokusai.cancelButtonAction = {
+    println("canceled")
+}
+
 ```
 
 #### Add a button with a closure

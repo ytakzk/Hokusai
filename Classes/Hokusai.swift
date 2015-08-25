@@ -3,7 +3,7 @@
 //  Hokusai
 //
 //  Created by Yuta Akizuki on 2015/07/07.
-//  Copyright (c) 2015年 ytakak. All rights reserved.
+//  Copyright (c) 2015年 ytakzk. All rights reserved.
 //
 
 import UIKit
@@ -223,9 +223,10 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Variables users can change
     public var colorScheme        = HOKColorScheme.Hokusai
-    public var cancelButtonTitle  = "Cancel"
     public var fontName           = ""
     public var colors:HOKColors!  = nil
+    public var cancelButtonTitle  = "Cancel"
+    public var cancelButtonAction : (()->Void)?
     
     required public init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
@@ -306,12 +307,16 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         return btn
     }
     
-    // Add a cancel button with a selector
+    // Add a cancel button
     public func addCancelButton(title:String) -> HOKButton {
-        let btn        = addButton(title)
-        btn.addTarget(self, action:Selector("buttonTapped:"), forControlEvents:.TouchUpInside)
-        btn.isCancelButton = true
-        return btn
+        if let cancelButtonAction = cancelButtonAction {
+            return addButton(title, action: cancelButtonAction)
+        } else {
+            let btn        = addButton(title)
+            btn.addTarget(self, action:Selector("buttonTapped:"), forControlEvents:.TouchUpInside)
+            btn.isCancelButton = true
+            return btn
+        }
     }
     
     // Add a button just with the title
@@ -433,7 +438,9 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
             let control = UIControl()
             control.sendAction(btn.selector, to:btn.target, forEvent:nil)
         } else {
-            println("Unknow action type for button")
+            if !btn.isCancelButton {
+                println("Unknow action type for button")
+            }
         }
         dismiss()
     }
