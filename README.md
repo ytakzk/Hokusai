@@ -48,10 +48,10 @@ hokusai.addButton("Button 1") {
 // Add a button with a selector
 hokusai.addButton("Button 2", target: self, selector: Selector("button2Pressed"))
 
-// Set a font name. AvenirNext-DemiBold is the default. (Optinoal)
+// Set a font name. AvenirNext-DemiBold is the default. (Optional)
 hokusai.fontName = "Verdana-Bold"
 
-// Select a color scheme. Just below you can see the dafault sets of schemes. (Optinoal)
+// Select a color scheme. Just below you can see the dafault sets of schemes. (Optional)
 hokusai.colorScheme = HOKColorScheme.Enshu
 
 // Show Hokusai
@@ -62,10 +62,10 @@ func button2Pressed() {
     println("Oribe")
 }
 
-// Change a title for cancel button. Default is Cancel. (Optinoal)
+// Change a title for cancel button. Default is Cancel. (Optional)
 hokusai.cancelButtonTitle = "Done"
 
-// Add a callback for cancel button (Optinoal)
+// Add a callback for cancel button (Optional)
 hokusai.cancelButtonAction = {
     println("canceled")
 }
