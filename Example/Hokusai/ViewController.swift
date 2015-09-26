@@ -50,7 +50,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width  = self.view.frame.width
         let height = self.view.frame.height
-        var length = (width < height) ? width*0.5 : width/3
+        let length = (width < height) ? width*0.5 : width/3
         
         return CGSize(width: length, height: length)
     }
@@ -64,7 +64,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // Add a button with a closure
         hokusai.addButton("Button 1") {
-            println("Rikyu")
+            print("Rikyu")
         }
         
         // Add a button with a selector
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if indexPath.row == 0 {
             // Add a callback for cancel button
             hokusai.cancelButtonAction = {
-                println("canceled")
+                print("canceled")
             }
         }
         
@@ -100,7 +100,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func button2Pressed() {
-        println("Oribe")
+        print("Oribe")
     }
     
     func getName(scheme: HOKColorScheme) -> String {
