@@ -92,7 +92,7 @@ final public class HOKColors: NSObject {
     var cancelButtonColor: UIColor
     var fontColor: UIColor
     
-    init(backGroundColor: UIColor, buttonColor: UIColor, cancelButtonColor: UIColor, fontColor: UIColor) {
+    required public init(backGroundColor: UIColor, buttonColor: UIColor, cancelButtonColor: UIColor, fontColor: UIColor) {
         self.backgroundColor   = backGroundColor
         self.buttonColor       = buttonColor
         self.cancelButtonColor = cancelButtonColor
