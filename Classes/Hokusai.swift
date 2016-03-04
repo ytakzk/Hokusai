@@ -140,11 +140,11 @@ final public class HOKMenuView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override public func layoutSubviews() {
         super.layoutSubviews()
         shapeLayer.frame.origin  = frame.origin
@@ -189,7 +189,7 @@ final public class HOKMenuView: UIView {
         if let presentationLayer = layer.presentationLayer() as? CALayer {
             var verticalOffset = self.layer.frame.origin.y - presentationLayer.frame.origin.y
             
-            // On dismissing, the offset should not be offend on the buttons.
+            // On dismissing, the offset should not be offended on the buttons.
             if verticalOffset > 0 {
                 verticalOffset *= 0.2
             }
@@ -229,7 +229,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     required public init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
-
+    
     required public init() {
         super.init(nibName:nil, bundle:nil)
         view.frame            = UIScreen.mainScreen().bounds
@@ -238,10 +238,10 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         menuView.frame = view.frame
         view.addSubview(menuView)
-    
+        
         kButtonWidth = view.frame.width * 0.8
         
-        // Gesture Recognizer for tapping outside the menu
+        // Gesture Recognizer for outside the menu
         let tapGesture = UITapGestureRecognizer(target: self, action: Selector("dismiss"))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.delegate = self
@@ -250,10 +250,10 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onOrientationChange:", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
-    func onOrientationChange(notification: NSNotification){
-
+    func onOrientationChange(notification: NSNotification) {
+        
         kButtonWidth = view.frame.width * 0.8
-
+        
         let menuHeight = CGFloat(buttons.count + 2) * kButtonInterval + CGFloat(buttons.count) * kButtonHeight
         menuView.frame = CGRect(
             x: 0,
@@ -266,7 +266,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         menuView.shapeLayer.bounds.origin = menuView.frame.origin
         menuView.shapeLayer.layoutIfNeeded()
         menuView.layoutIfNeeded()
-
+        
         for var i = 0; i < buttons.count; i++ {
             let btn = buttons[i]
             btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
@@ -317,7 +317,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    // Add a button just with the title
+    // Add a button just with a title
     private func addButton(title:String) -> HOKButton {
         let btn = HOKButton()
         btn.layer.masksToBounds = true
@@ -341,6 +341,8 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         // This is needed to retain this instance.
         instance = self
+        
+        menuView.frame = view.frame
         
         let colors = (self.colors == nil) ? colorScheme.getColors() : self.colors
         
@@ -380,7 +382,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    // Add an animation on showing the menu
+    // Add an animation when showing the menu
     private func animationWillStart() {
         // Background
         self.view.backgroundColor = UIColor.clearColor()
@@ -428,7 +430,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         menuView.positionAnimationWillStart()
     }
     
-    // When the buttons are tapped, this method is called.
+    // When a button is tapped, this method is called.
     func buttonTapped(btn:HOKButton) {
         if btn.actionType == HOKAcitonType.Closure {
             btn.action()
@@ -442,5 +444,5 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         }
         dismiss()
     }
-
+    
 }
