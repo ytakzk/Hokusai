@@ -189,7 +189,7 @@ final public class HOKMenuView: UIView {
         if let presentationLayer = layer.presentationLayer() as? CALayer {
             var verticalOffset = self.layer.frame.origin.y - presentationLayer.frame.origin.y
             
-            // On dismissing, the offset should not be offend on the buttons.
+            // On dismissing, the offset should not be offended on the buttons.
             if verticalOffset > 0 {
                 verticalOffset *= 0.2
             }
@@ -241,7 +241,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         kButtonWidth = view.frame.width * 0.8
         
-        // Gesture Recognizer for tapping outside the menu
+        // Gesture Recognizer for outside the menu
         let tapGesture = UITapGestureRecognizer(target: self, action: Selector("dismiss"))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.delegate = self
@@ -317,7 +317,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    // Add a button just with the title
+    // Add a button just with a title
     private func addButton(title:String) -> HOKButton {
         let btn = HOKButton()
         btn.layer.masksToBounds = true
@@ -382,7 +382,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    // Add an animation on showing the menu
+    // Add an animation when showing the menu
     private func animationWillStart() {
         // Background
         self.view.backgroundColor = UIColor.clearColor()
@@ -430,7 +430,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         menuView.positionAnimationWillStart()
     }
     
-    // When the buttons are tapped, this method is called.
+    // When a button is tapped, this method is called.
     func buttonTapped(btn:HOKButton) {
         if btn.actionType == HOKAcitonType.Closure {
             btn.action()
