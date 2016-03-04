@@ -140,11 +140,11 @@ final public class HOKMenuView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override public func layoutSubviews() {
         super.layoutSubviews()
         shapeLayer.frame.origin  = frame.origin
@@ -229,7 +229,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     required public init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
-
+    
     required public init() {
         super.init(nibName:nil, bundle:nil)
         view.frame            = UIScreen.mainScreen().bounds
@@ -238,7 +238,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         menuView.frame = view.frame
         view.addSubview(menuView)
-    
+        
         kButtonWidth = view.frame.width * 0.8
         
         // Gesture Recognizer for tapping outside the menu
@@ -250,10 +250,10 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onOrientationChange:", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
-    func onOrientationChange(notification: NSNotification){
-
+    func onOrientationChange(notification: NSNotification) {
+        
         kButtonWidth = view.frame.width * 0.8
-
+        
         let menuHeight = CGFloat(buttons.count + 2) * kButtonInterval + CGFloat(buttons.count) * kButtonHeight
         menuView.frame = CGRect(
             x: 0,
@@ -266,7 +266,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         menuView.shapeLayer.bounds.origin = menuView.frame.origin
         menuView.shapeLayer.layoutIfNeeded()
         menuView.layoutIfNeeded()
-
+        
         for var i = 0; i < buttons.count; i++ {
             let btn = buttons[i]
             btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
@@ -341,6 +341,8 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         // This is needed to retain this instance.
         instance = self
+        
+        menuView.frame = view.frame
         
         let colors = (self.colors == nil) ? colorScheme.getColors() : self.colors
         
@@ -442,5 +444,5 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         }
         dismiss()
     }
-
+    
 }
