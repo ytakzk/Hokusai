@@ -305,7 +305,9 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     // Add a cancel button
     public func addCancelButton(title:String) -> HOKButton {
         if let cancelButtonAction = cancelButtonAction {
-            return addButton(title, action: cancelButtonAction)
+            let btn = addButton(title, action: cancelButtonAction)
+            btn.isCancelButton = true
+            return btn
         } else {
             let btn        = addButton(title)
             btn.addTarget(self, action:Selector("buttonTapped:"), forControlEvents:.TouchUpInside)
