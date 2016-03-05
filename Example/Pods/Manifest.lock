@@ -1,5 +1,5 @@
 PODS:
-  - Hokusai (0.1.20)
+  - Hokusai (0.1.23)
 
 DEPENDENCIES:
   - Hokusai (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Hokusai: b74bdac1adc90c4eee2c9233c5d48c42f5f5ae6c
+  Hokusai: ae652f73a7c4811cfccad0c0ad80ac469fb934fc
 
 COCOAPODS: 0.39.0
