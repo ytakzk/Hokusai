@@ -6,4 +6,4 @@ script:
 before_install:
   - brew update
   - brew uninstall xctool && brew install --HEAD xctool
-  - cd Example/ && pod install && ../
+  - cd Example/ && pod install && cd ../
