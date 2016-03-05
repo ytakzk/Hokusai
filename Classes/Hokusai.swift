@@ -147,13 +147,12 @@ final public class HOKMenuView: UIView {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        shapeLayer.frame.origin  = frame.origin
-        shapeLayer.bounds.origin = frame.origin
     }
     
     func setShapeLayer(colors: HOKColors) {
         self.backgroundColor = UIColor.clearColor()
         shapeLayer.fillColor = colors.backgroundColor.CGColor
+        shapeLayer.frame     = frame
         self.layer.insertSublayer(shapeLayer, atIndex: 0)
     }
     
@@ -163,7 +162,7 @@ final public class HOKMenuView: UIView {
             displayLink!.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         }
         
-        shapeLayer.bounds = CGRect(origin: CGPointZero, size: self.bounds.size)
+        shapeLayer.frame = CGRect(origin: CGPointZero, size: frame.size)
     }
     
     func updatePath() {
@@ -262,10 +261,8 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
             height: menuHeight
         )
         
-        menuView.shapeLayer.frame         = menuView.frame
-        menuView.shapeLayer.bounds.origin = menuView.frame.origin
-        menuView.shapeLayer.layoutIfNeeded()
-        menuView.layoutIfNeeded()
+        menuView.shapeLayer.frame = CGRect(origin: CGPointZero, size: menuView.frame.size)
+        menuView.updatePath()
         
         for var i = 0; i < buttons.count; i++ {
             let btn = buttons[i]
@@ -341,8 +338,6 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         // This is needed to retain this instance.
         instance = self
-        
-        menuView.frame = view.frame
         
         let colors = (self.colors == nil) ? colorScheme.getColors() : self.colors
         
