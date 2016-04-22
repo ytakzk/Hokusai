@@ -158,7 +158,7 @@ final public class HOKMenuView: UIView {
     
     func positionAnimationWillStart() {
         if displayLink == nil {
-            displayLink = CADisplayLink(target: self, selector: "tick:")
+            displayLink = CADisplayLink(target: self, selector: #selector(HOKMenuView.tick(_:)))
             displayLink!.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         }
         
@@ -241,12 +241,12 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         kButtonWidth = view.frame.width * 0.8
         
         // Gesture Recognizer for outside the menu
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("dismiss"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Hokusai.dismiss))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.delegate = self
         self.view.addGestureRecognizer(tapGesture)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onOrientationChange:", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Hokusai.onOrientationChange(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
     func onOrientationChange(notification: NSNotification) {
@@ -264,7 +264,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         menuView.shapeLayer.frame = CGRect(origin: CGPointZero, size: menuView.frame.size)
         menuView.updatePath()
         
-        for var i = 0; i < buttons.count; i++ {
+        for i in 0 ..< buttons.count {
             let btn = buttons[i]
             btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
             btn.center = CGPoint(x: view.center.x, y: -kButtonHeight * 0.25 + (kButtonHeight + kButtonInterval) * CGFloat(i + 1))
@@ -288,7 +288,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         let btn        = addButton(title)
         btn.action     = action
         btn.actionType = HOKAcitonType.Closure
-        btn.addTarget(self, action:Selector("buttonTapped:"), forControlEvents:.TouchUpInside)
+        btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
         return btn
     }
     
@@ -298,7 +298,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         btn.target     = target
         btn.selector   = selector
         btn.actionType = HOKAcitonType.Selector
-        btn.addTarget(self, action:Selector("buttonTapped:"), forControlEvents:.TouchUpInside)
+        btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
         return btn
     }
     
@@ -310,7 +310,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
             return btn
         } else {
             let btn        = addButton(title)
-            btn.addTarget(self, action:Selector("buttonTapped:"), forControlEvents:.TouchUpInside)
+            btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
             btn.isCancelButton = true
             return btn
         }
@@ -359,7 +359,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         )
         
         // Locate buttons
-        for var i = 0; i < buttons.count; i++ {
+        for i in 0 ..< buttons.count {
             let btn = buttons[i]
             btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
             btn.center = CGPoint(x: view.center.x, y: -kButtonHeight * 0.25 + (kButtonHeight + kButtonInterval) * CGFloat(i + 1))
