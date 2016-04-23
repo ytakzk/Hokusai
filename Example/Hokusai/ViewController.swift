@@ -68,7 +68,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         
         // Add a button with a selector
-        hokusai.addButton("Button 2", target: self, selector: Selector("button2Pressed"))
+        hokusai.addButton("Button 2", target: self, selector: #selector(ViewController.button2Pressed))
         
         // Set a font name. Default is AvenirNext-DemiBold.
         hokusai.fontName = "Verdana-Bold"

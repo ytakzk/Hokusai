@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Hokusai"
-  s.version          = "0.1.23"
+  s.version          = "0.2.0"
   s.summary          = "A Swift library to provide a bouncy action sheet"
   s.homepage         = "https://github.com/ytakzk/Hokusai"
   s.license          = 'MIT'
