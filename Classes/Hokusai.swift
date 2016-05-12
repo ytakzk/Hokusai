@@ -299,6 +299,8 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         btn.selector   = selector
         btn.actionType = HOKAcitonType.Selector
         btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
+        btn.addTarget(self, action:#selector(Hokusai.buttonDarker(_:)), forControlEvents:.TouchDown)
+        btn.addTarget(self, action:#selector(Hokusai.buttonLighter(_:)), forControlEvents:.TouchUpOutside)
         return btn
     }
     
@@ -311,6 +313,8 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         } else {
             let btn        = addButton(title)
             btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
+            btn.addTarget(self, action:#selector(Hokusai.buttonDarker(_:)), forControlEvents:.TouchDown)
+            btn.addTarget(self, action:#selector(Hokusai.buttonLighter(_:)), forControlEvents:.TouchUpOutside)
             btn.isCancelButton = true
             return btn
         }
@@ -442,4 +446,39 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         dismiss()
     }
     
+
+    // Make the buttons darker when user tapping.
+    func buttonDarker(btn:HOKButton) {
+        btn.backgroundColor = btn.backgroundColor!.darkerColorWithPercentage(0.2)
+    }
+
+    // Make the buttons lighter when user release finger.
+    func buttonLighter(btn:HOKButton) {
+        btn.backgroundColor = btn.backgroundColor!.lighterColorWithPercentage(0.2)
+    }
+
+}
+
+extension UIColor {
+
+    func lighterColorWithPercentage(percent : Double) -> UIColor {
+        return colorWithBrightness(CGFloat(1 + percent));
+    }
+
+    func darkerColorWithPercentage(percent : Double) -> UIColor {
+        return colorWithBrightness(CGFloat(1 - percent));
+    }
+
+    func colorWithBrightness(factor: CGFloat) -> UIColor {
+        var hue : CGFloat = 0
+        var saturation : CGFloat = 0
+        var brightness : CGFloat = 0
+        var alpha : CGFloat = 0
+
+        if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+            return UIColor(hue: hue, saturation: saturation, brightness: brightness * factor, alpha: alpha)
+        } else {
+            return self;
+        }
+    }
 }
