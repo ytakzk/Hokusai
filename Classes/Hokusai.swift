@@ -128,8 +128,12 @@ final public class HOKButton: UIButton {
 }
 
 final public class HOKLabel: UILabel {
+    var isTitle = true
+    
     // Font
-    let kDefaultFont      = "AvenirNext-DemiBold"
+    var kDefaultFont:String {
+        return isTitle ? "AvenirNext-DemiBold" : "AvenirNext-Light"
+    }
     let kFontSize:CGFloat = 16.0
     
     func setColor(colors: HOKColors) {
@@ -245,10 +249,13 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     // Variables users can change
     public var colorScheme        = HOKColorScheme.Hokusai
     public var fontName           = ""
+    public var lightFontName      = ""
     public var colors:HOKColors!  = nil
     public var cancelButtonTitle  = "Cancel"
     public var cancelButtonAction : (()->Void)?
     public var headline: String   = ""
+    public var message:String     = ""
+
     
     required public init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
@@ -274,10 +281,11 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Hokusai.onOrientationChange(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
-    /// Convenience initializer to allow a single lined title
-    convenience public init(headline: String) {
+    /// Convenience initializer to allow a title and optional message
+    convenience public init(headline: String, message: String = "") {
         self.init()
         self.headline = headline
+        self.message  = message
     }
     
     func onOrientationChange(notification: NSNotification) {
@@ -371,13 +379,20 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         return btn
     }
     
-    // Add a label with a text
+    // Add a multi-lined message label
+    private func addMessageLabel(text: String) -> HOKLabel {
+        let label = addLabel(text)
+        label.isTitle = false
+        return label
+    }
+    
+    // Add a multi-lined label just with a text
     private func addLabel(text: String) -> HOKLabel {
         let label = HOKLabel()
         label.layer.masksToBounds = true
         label.textAlignment = .Center
         label.text = text
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         menuView.addSubview(label)
         labels.append(label)
         return label
@@ -411,6 +426,11 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
             self.addLabel(headline)
         }
         
+        // Add a message label when message is set
+        if !message.isEmpty {
+            self.addMessageLabel(message)
+        }
+
         // Style buttons
         for btn in buttons {
             btn.layer.cornerRadius = kButtonHeight * 0.5
@@ -420,7 +440,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         // Style labels
         for label in labels {
-            label.setFontName(fontName)
+            label.setFontName( label.isTitle ? fontName : lightFontName)
             label.setColor(colors)
         }
         
