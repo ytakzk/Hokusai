@@ -60,16 +60,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Here is the implementation for Hokusai. //
         /////////////////////////////////////////////
         
-        // Init with title
-        let hokusai2 = Hokusai(headline: "Information")
-        
-        // Init with title and message
-        let hokusai3 = Hokusai(headline: "Information", message: "This can be a long multi-lined message.")
-        
-        // ...or add title and message later
-        hokusai2.headline = "Infomration"
-        hokusai2.message  = "This can be a long multi-lined message."
-        
         let hokusai = Hokusai()
         if indexPath.row % 2 == 0 {
             
