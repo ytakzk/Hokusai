@@ -59,8 +59,26 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         /////////////////////////////////////////////
         // Here is the implementation for Hokusai. //
         /////////////////////////////////////////////
-
+        
+        // Init with title
+        let hokusai2 = Hokusai(headline: "Information")
+        
+        // Init with title and message
+        let hokusai3 = Hokusai(headline: "Information", message: "This can be a long multi-lined message.")
+        
+        // ...or add title and message later
+        hokusai2.headline = "Infomration"
+        hokusai2.message  = "This can be a long multi-lined message."
+        
         let hokusai = Hokusai()
+        if indexPath.row % 2 == 0 {
+            
+            // Add a title
+            hokusai.headline = "Information"
+            
+            // Add a message
+            hokusai.message  = "Katsushika Hokusai (葛飾 北斎) was a Japanese artist, ukiyo-e painter and printmaker of the Edo period."
+        }
         
         // Add a button with a closure
         hokusai.addButton("Button 1") {
@@ -71,7 +89,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         hokusai.addButton("Button 2", target: self, selector: #selector(ViewController.button2Pressed))
         
         // Set a font name. Default is AvenirNext-DemiBold.
-        hokusai.fontName = "Verdana-Bold"
+        hokusai.fontName      = "Verdana-Bold"
+        
+        // Set a light font name used for the message. Default is AvenirNext-Light
+        hokusai.lightFontName = "Verdana"
 
         // Change a title for cancel button (Default is Cancel)
         hokusai.cancelButtonTitle = "Done"
