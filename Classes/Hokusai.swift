@@ -127,6 +127,31 @@ final public class HOKButton: UIButton {
     }
 }
 
+final public class HOKLabel: UILabel {
+    var isTitle = true
+    
+    // Font
+    var kDefaultFont:String {
+        return isTitle ? "AvenirNext-DemiBold" : "AvenirNext-Light"
+    }
+    let kFontSize:CGFloat = 16.0
+    
+    func setColor(colors: HOKColors) {
+        self.textColor = colors.fontColor
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
+    func setFontName(fontName: String?) {
+        let name:String
+        if let fontName = fontName where !fontName.isEmpty {
+            name = fontName
+        } else {
+            name = kDefaultFont
+        }
+        self.font = UIFont(name: name, size:kFontSize)
+    }
+}
+
 final public class HOKMenuView: UIView {
     var colorScheme = HOKColorScheme.Hokusai
     
@@ -209,21 +234,28 @@ final public class HOKMenuView: UIView {
 
 final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     // Views
-    private var menuView = HOKMenuView()
-    private var buttons  = [HOKButton]()
+    private var menuView   = HOKMenuView()
+    private var buttons    = [HOKButton]()
+    private var labels     = [HOKLabel]()
     
-    private var instance:Hokusai!       = nil
-    private var kButtonWidth:CGFloat    = 250
-    private let kButtonHeight:CGFloat   = 48.0
-    private let kButtonInterval:CGFloat = 16.0
-    private var bgColor                 = UIColor(white: 1.0, alpha: 0.7)
+    private var instance:Hokusai!        = nil
+    private var kButtonWidth:CGFloat     = 250
+    private let kButtonHeight:CGFloat    = 48.0
+    private let kElementInterval:CGFloat = 16.0
+    private var kLabelWidth:CGFloat { return kButtonWidth }
+    private let kLabelHeight:CGFloat     = 30.0
+    private var bgColor                  = UIColor(white: 1.0, alpha: 0.7)
     
     // Variables users can change
     public var colorScheme        = HOKColorScheme.Hokusai
     public var fontName           = ""
+    public var lightFontName      = ""
     public var colors:HOKColors!  = nil
     public var cancelButtonTitle  = "Cancel"
     public var cancelButtonAction : (()->Void)?
+    public var headline: String   = ""
+    public var message:String     = ""
+
     
     required public init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
@@ -249,11 +281,38 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Hokusai.onOrientationChange(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
+    /// Convenience initializer to allow a title and optional message
+    convenience public init(headline: String, message: String = "") {
+        self.init()
+        self.headline = headline
+        self.message  = message
+    }
+    
     func onOrientationChange(notification: NSNotification) {
-        
+        self.updateFrames()
+        self.view.layoutIfNeeded()
+    }
+    
+    func updateFrames() {
         kButtonWidth = view.frame.width * 0.8
         
-        let menuHeight = CGFloat(buttons.count + 2) * kButtonInterval + CGFloat(buttons.count) * kButtonHeight
+        var yPrevious:CGFloat = 0
+        for label in labels {
+            label.frame  = CGRect(x: 0.0, y: 0.0, width: kLabelWidth, height: kLabelHeight)
+            label.sizeToFit()
+            label.center = CGPoint(x: view.center.x, y: label.frame.size.height * 0.5 + yPrevious + kElementInterval)
+            yPrevious = CGRectGetMaxY(label.frame)
+        }
+        
+        for btn in buttons {
+            btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
+            btn.center = CGPoint(x: view.center.x, y: kButtonHeight * 0.5 + yPrevious + kElementInterval)
+            yPrevious = CGRectGetMaxY(btn.frame)
+        }
+        
+        let labelHeights = labels.flatMap { CGRectGetHeight($0.frame) }.reduce(0, combine: +)
+        let buttonHeights = buttons.flatMap { CGRectGetHeight($0.frame) }.reduce(0, combine: +)
+        let menuHeight = CGFloat(buttons.count + labels.count + 1) * kElementInterval + labelHeights + buttonHeights
         menuView.frame = CGRect(
             x: 0,
             y: view.frame.height - menuHeight,
@@ -263,13 +322,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         menuView.shapeLayer.frame = CGRect(origin: CGPointZero, size: menuView.frame.size)
         menuView.updatePath()
-        
-        for i in 0 ..< buttons.count {
-            let btn = buttons[i]
-            btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
-            btn.center = CGPoint(x: view.center.x, y: -kButtonHeight * 0.25 + (kButtonHeight + kButtonInterval) * CGFloat(i + 1))
-        }
-        self.view.layoutIfNeeded()
+        menuView.layoutIfNeeded()
     }
     
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -330,6 +383,25 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         return btn
     }
     
+    // Add a multi-lined message label
+    private func addMessageLabel(text: String) -> HOKLabel {
+        let label = addLabel(text)
+        label.isTitle = false
+        return label
+    }
+    
+    // Add a multi-lined label just with a text
+    private func addLabel(text: String) -> HOKLabel {
+        let label = HOKLabel()
+        label.layer.masksToBounds = true
+        label.textAlignment = .Center
+        label.text = text
+        label.numberOfLines = 0
+        menuView.addSubview(label)
+        labels.append(label)
+        return label
+    }
+    
     // Show the menu
     public func show() {
         if let rv = UIApplication.sharedApplication().keyWindow {
@@ -353,24 +425,31 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         // Add a cancel button
         self.addCancelButton(cancelButtonTitle)
         
-        // Decide the menu size
-        let menuHeight = CGFloat(buttons.count + 2) * kButtonInterval + CGFloat(buttons.count) * kButtonHeight
-        menuView.frame = CGRect(
-            x: 0,
-            y: view.frame.height - menuHeight,
-            width: view.frame.width,
-            height: menuHeight
-        )
+        // Add a title label when title is set
+        if !headline.isEmpty {
+            self.addLabel(headline)
+        }
         
-        // Locate buttons
-        for i in 0 ..< buttons.count {
-            let btn = buttons[i]
-            btn.frame  = CGRect(x: 0.0, y: 0.0, width: kButtonWidth, height: kButtonHeight)
-            btn.center = CGPoint(x: view.center.x, y: -kButtonHeight * 0.25 + (kButtonHeight + kButtonInterval) * CGFloat(i + 1))
+        // Add a message label when message is set
+        if !message.isEmpty {
+            self.addMessageLabel(message)
+        }
+
+        // Style buttons
+        for btn in buttons {
             btn.layer.cornerRadius = kButtonHeight * 0.5
             btn.setFontName(fontName)
             btn.setColor(colors)
         }
+        
+        // Style labels
+        for label in labels {
+            label.setFontName( label.isTitle ? fontName : lightFontName)
+            label.setColor(colors)
+        }
+        
+        // Set frames
+        self.updateFrames()
         
         // Animations
         animationWillStart()
@@ -405,7 +484,6 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
             options: [.BeginFromCurrentState, .AllowUserInteraction, .OverrideInheritedOptions],
             animations: {
                 self.menuView.frame = CGRect(origin: CGPoint(x: 0.0, y: self.view.frame.height-self.menuView.frame.height), size: self.menuView.frame.size)
-                self.menuView.layoutIfNeeded()
             },
             completion: {(finished) in
         })

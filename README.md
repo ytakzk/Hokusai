@@ -72,6 +72,19 @@ hokusai.cancelButtonAction = {
 
 ```
 
+#### Add a title and message
+```
+// Init with title
+let hokusai = Hokusai(headline: "Information")
+
+// Init with title and message
+let hokusai = Hokusai(headline: "Information", message: "This can be a long multi-lined message.")
+
+// ...or add title and message later, but before you call `show()`
+hokusai.headline = "Infomration"
+hokusai.message  = "This can be a long multi-lined message."
+```
+
 #### Add a button with a closure
 ```
 hokusai.addButton("Button Title") {
