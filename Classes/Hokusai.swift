@@ -338,19 +338,21 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Add a button with a closure
     public func addButton(title:String, action:()->Void) -> HOKButton {
-        let btn        = addButton(title)
-        btn.action     = action
-        btn.actionType = HOKAcitonType.Closure
+        let btn            = addButton(title)
+        btn.exclusiveTouch = true
+        btn.action         = action
+        btn.actionType     = HOKAcitonType.Closure
         btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
         return btn
     }
     
     // Add a button with a selector
     public func addButton(title:String, target:AnyObject, selector:Selector) -> HOKButton {
-        let btn        = addButton(title)
-        btn.target     = target
-        btn.selector   = selector
-        btn.actionType = HOKAcitonType.Selector
+        let btn            = addButton(title)
+        btn.exclusiveTouch = true
+        btn.target         = target
+        btn.selector       = selector
+        btn.actionType     = HOKAcitonType.Selector
         btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
         btn.addTarget(self, action:#selector(Hokusai.buttonDarker(_:)), forControlEvents:.TouchDown)
         btn.addTarget(self, action:#selector(Hokusai.buttonLighter(_:)), forControlEvents:.TouchUpOutside)
@@ -361,10 +363,12 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     public func addCancelButton(title:String) -> HOKButton {
         if let cancelButtonAction = cancelButtonAction {
             let btn = addButton(title, action: cancelButtonAction)
+            btn.exclusiveTouch = true
             btn.isCancelButton = true
             return btn
         } else {
-            let btn        = addButton(title)
+            let btn            = addButton(title)
+            btn.exclusiveTouch = true
             btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), forControlEvents:.TouchUpInside)
             btn.addTarget(self, action:#selector(Hokusai.buttonDarker(_:)), forControlEvents:.TouchDown)
             btn.addTarget(self, action:#selector(Hokusai.buttonLighter(_:)), forControlEvents:.TouchUpOutside)
@@ -376,6 +380,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     // Add a button just with a title
     private func addButton(title:String) -> HOKButton {
         let btn = HOKButton()
+        btn.exclusiveTouch      = true
         btn.layer.masksToBounds = true
         btn.setTitle(title, forState: .Normal)
         menuView.addSubview(btn)
@@ -437,6 +442,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
 
         // Style buttons
         for btn in buttons {
+            btn.exclusiveTouch     = true
             btn.layer.cornerRadius = kButtonHeight * 0.5
             btn.setFontName(fontName)
             btn.setColor(colors)
