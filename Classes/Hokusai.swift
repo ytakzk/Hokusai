@@ -427,16 +427,16 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         menuView.setShapeLayer(colors!)
         
         // Add a cancel button
-        self.addCancelButton(cancelButtonTitle)
+        let _ = self.addCancelButton(cancelButtonTitle)
         
         // Add a title label when title is set
         if !headline.isEmpty {
-            self.addLabel(headline)
+            let _ = self.addLabel(headline)
         }
         
         // Add a message label when message is set
         if !message.isEmpty {
-            self.addMessageLabel(message)
+            let _ = self.addMessageLabel(message)
         }
 
         // Style buttons
