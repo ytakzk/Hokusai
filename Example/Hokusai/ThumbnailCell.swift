@@ -14,7 +14,7 @@ class ThumbnailCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.nameLabel.layer.shadowColor   = UIColor.blackColor().CGColor
+        self.nameLabel.layer.shadowColor   = UIColor.black.cgColor
         self.nameLabel.layer.shadowOpacity = 1.0
         self.nameLabel.layer.shadowRadius  = 4.0
         self.nameLabel.layer.shadowOffset  = CGSize(width: 0, height: 0)

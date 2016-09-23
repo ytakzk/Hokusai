@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'Hokusai_Example', :exclusive => true do
+target 'Hokusai_Example' do
   pod "Hokusai", :path => "../"
 end
 
-target 'Hokusai_Tests', :exclusive => true do
+target 'Hokusai_Tests' do
   pod "Hokusai", :path => "../"
 
   

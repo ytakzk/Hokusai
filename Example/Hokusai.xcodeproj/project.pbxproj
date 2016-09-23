@@ -15,8 +15,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		A785B933C4960F498676CFE2 /* Pods_Hokusai_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEEEE5480B119E7A880B590 /* Pods_Hokusai_Example.framework */; };
-		F7C5FA1C9D6E6889BA6AC363 /* Pods_Hokusai_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958E291B78B2CE8431BA7A32 /* Pods_Hokusai_Tests.framework */; };
+		B11AF6553E2D98BD898A876A /* Pods_Hokusai_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818771DCB4FB1F34D251125 /* Pods_Hokusai_Tests.framework */; };
+		C222F19AA5FD9D8E29F27D41 /* Pods_Hokusai_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124C1F1E8104854D8D874736 /* Pods_Hokusai_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,11 +31,11 @@
 
 /* Begin PBXFileReference section */
 		01895D80E861B62013FDBBEC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		1156475B31036E47BEB91061 /* Pods-Hokusai_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1A1D560800BCB094C70FFE34 /* Pods-Hokusai_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		1DEEEE5480B119E7A880B590 /* Pods_Hokusai_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hokusai_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08C36B0C0C6589CC117EA645 /* Pods-Hokusai_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		124C1F1E8104854D8D874736 /* Pods_Hokusai_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hokusai_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23DA8E7F53A1029C39855954 /* Pods-Hokusai_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example.release.xcconfig"; sourceTree = "<group>"; };
 		29C7E8EBAD1448B36DEFF7DE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		337A074931DFE9AE65B6E350 /* Pods-Hokusai_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3818771DCB4FB1F34D251125 /* Pods_Hokusai_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hokusai_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E64DA31B52A27A0020B894 /* Hokusai.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hokusai.swift; sourceTree = "<group>"; };
 		52E64DA81B52AA890020B894 /* ThumbnailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Hokusai_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hokusai_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,8 +48,8 @@
 		607FACE51AFB9204008FA782 /* Hokusai_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hokusai_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6CE3626B92A05FF02C94B3E0 /* Pods-Hokusai_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		958E291B78B2CE8431BA7A32 /* Pods_Hokusai_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hokusai_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1133E136CDEB0DCCD37EE88 /* Pods-Hokusai_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C2AB523EEA5A52930009FE82 /* Pods-Hokusai_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hokusai_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CE32B3A83DE790AAD61564ED /* Hokusai.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Hokusai.podspec; path = ../Hokusai.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A785B933C4960F498676CFE2 /* Pods_Hokusai_Example.framework in Frameworks */,
+				C222F19AA5FD9D8E29F27D41 /* Pods_Hokusai_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,13 +66,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7C5FA1C9D6E6889BA6AC363 /* Pods_Hokusai_Tests.framework in Frameworks */,
+				B11AF6553E2D98BD898A876A /* Pods_Hokusai_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		169885FEC9889328EC8660C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				124C1F1E8104854D8D874736 /* Pods_Hokusai_Example.framework */,
+				3818771DCB4FB1F34D251125 /* Pods_Hokusai_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52E64DA21B52A25D0020B894 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,17 +89,6 @@
 			);
 			name = Classes;
 			path = ../Classes;
-			sourceTree = "<group>";
-		};
-		5B8F66D356A83524B62D8543 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6CE3626B92A05FF02C94B3E0 /* Pods-Hokusai_Example.debug.xcconfig */,
-				1156475B31036E47BEB91061 /* Pods-Hokusai_Example.release.xcconfig */,
-				1A1D560800BCB094C70FFE34 /* Pods-Hokusai_Tests.debug.xcconfig */,
-				337A074931DFE9AE65B6E350 /* Pods-Hokusai_Tests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -101,8 +99,8 @@
 				607FACD21AFB9204008FA782 /* Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				5B8F66D356A83524B62D8543 /* Pods */,
-				EBC7AE8445AE017B5CCAC20A /* Frameworks */,
+				9EAAB11C024B5FC422978608 /* Pods */,
+				169885FEC9889328EC8660C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,13 +163,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		EBC7AE8445AE017B5CCAC20A /* Frameworks */ = {
+		9EAAB11C024B5FC422978608 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1DEEEE5480B119E7A880B590 /* Pods_Hokusai_Example.framework */,
-				958E291B78B2CE8431BA7A32 /* Pods_Hokusai_Tests.framework */,
+				B1133E136CDEB0DCCD37EE88 /* Pods-Hokusai_Example.debug.xcconfig */,
+				23DA8E7F53A1029C39855954 /* Pods-Hokusai_Example.release.xcconfig */,
+				08C36B0C0C6589CC117EA645 /* Pods-Hokusai_Tests.debug.xcconfig */,
+				C2AB523EEA5A52930009FE82 /* Pods-Hokusai_Tests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,12 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Hokusai_Example" */;
 			buildPhases = (
-				B3631EB2243BD48998775A19 /* Check Pods Manifest.lock */,
+				559DFC999E6E1CB4A7CD7A84 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				50E7CE1FC08CF62B06BBB2F0 /* Embed Pods Frameworks */,
-				4F17BFCC7139004CE8985613 /* Copy Pods Resources */,
+				0AC549CC7C803EEBB20CF11C /* [CP] Embed Pods Frameworks */,
+				06E81D7468C1DCB656FF42F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,12 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Hokusai_Tests" */;
 			buildPhases = (
-				36FD538A0E9F8C6A6BBC6FFF /* Check Pods Manifest.lock */,
+				3D3AFF1B7504583C5D7A748C /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				D4CE6D91716793ECB421805F /* Embed Pods Frameworks */,
-				1BCAA7989D7570676FC76D39 /* Copy Pods Resources */,
+				3EE063075558D2B855B78079 /* [CP] Embed Pods Frameworks */,
+				7BF1BF9B7077F4B2312580DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,9 +230,13 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 96LJ93WQBU;
+						LastSwiftMigration = 0800;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 96LJ93WQBU;
+						LastSwiftMigration = 0800;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -277,44 +281,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BCAA7989D7570676FC76D39 /* Copy Pods Resources */ = {
+		06E81D7468C1DCB656FF42F9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		36FD538A0E9F8C6A6BBC6FFF /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4F17BFCC7139004CE8985613 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,14 +296,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		50E7CE1FC08CF62B06BBB2F0 /* Embed Pods Frameworks */ = {
+		0AC549CC7C803EEBB20CF11C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,34 +311,64 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Example/Pods-Hokusai_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3631EB2243BD48998775A19 /* Check Pods Manifest.lock */ = {
+		3D3AFF1B7504583C5D7A748C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D4CE6D91716793ECB421805F /* Embed Pods Frameworks */ = {
+		3EE063075558D2B855B78079 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		559DFC999E6E1CB4A7CD7A84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7BF1BF9B7077F4B2312580DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hokusai_Tests/Pods-Hokusai_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -503,35 +507,40 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CE3626B92A05FF02C94B3E0 /* Pods-Hokusai_Example.debug.xcconfig */;
+			baseConfigurationReference = B1133E136CDEB0DCCD37EE88 /* Pods-Hokusai_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 96LJ93WQBU;
 				INFOPLIST_FILE = Hokusai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1156475B31036E47BEB91061 /* Pods-Hokusai_Example.release.xcconfig */;
+			baseConfigurationReference = 23DA8E7F53A1029C39855954 /* Pods-Hokusai_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 96LJ93WQBU;
 				INFOPLIST_FILE = Hokusai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A1D560800BCB094C70FFE34 /* Pods-Hokusai_Tests.debug.xcconfig */;
+			baseConfigurationReference = 08C36B0C0C6589CC117EA645 /* Pods-Hokusai_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 96LJ93WQBU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -544,15 +553,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hokusai_Example.app/Hokusai_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 337A074931DFE9AE65B6E350 /* Pods-Hokusai_Tests.release.xcconfig */;
+			baseConfigurationReference = C2AB523EEA5A52930009FE82 /* Pods-Hokusai_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 96LJ93WQBU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -561,6 +572,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hokusai_Example.app/Hokusai_Example";
 			};
 			name = Release;
