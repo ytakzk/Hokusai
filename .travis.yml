@@ -1,9 +1,11 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode8
 script:
-- xctool -workspace Example/Hokusai.xcworkspace -scheme Hokusai-Example -sdk iphonesimulator -destination 'OS=9.3,name=iPhone 6s Plus' ONLY_ACTIVE_ARCH=NO
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild -workspace Example/Hokusai.xcworkspace -scheme FusumaExample -sdk iphonesimulator -destination 'OS=10.0,name=iPhone 6S Plus' ONLY_ACTIVE_ARCH=NO build
 
-before_install:
-  - brew update
-  - brew uninstall xctool && brew install --HEAD xctool
-  - cd Example/ && pod install && cd ../
+#before_install:
+#  - brew update
+#  - brew uninstall xctool && brew install --HEAD xctool
