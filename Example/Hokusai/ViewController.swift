@@ -127,6 +127,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,
 	}
 
 	func getName(scheme: HOKColorScheme) -> String {
+        
 		if scheme == HOKColorScheme.hokusai {
 			return "Hokusai"
 		} else if scheme == HOKColorScheme.asagi {

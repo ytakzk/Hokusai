@@ -330,18 +330,23 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
         super.init(nibName:nibNameOrNil, bundle:nibBundleOrNil)
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
         if touch.view != gestureRecognizer.view {
+        
             return false
         }
+        
         return true
     }
     
     // Add a button with a closure
     public func addButton(_ title:String, action:@escaping ()->Void) -> HOKButton {
+        
         let btn        = addButton(title)
         btn.action     = action
         btn.actionType = HOKAcitonType.closure
@@ -351,6 +356,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Add a button with a selector
     public func addButton(_ title:String, target:AnyObject, selector:Selector) -> HOKButton {
+        
         let btn        = addButton(title)
         btn.target     = target
         btn.selector   = selector
@@ -363,12 +369,16 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Add a cancel button
     public func addCancelButton(_ title:String) -> HOKButton {
+        
         if let cancelButtonAction = cancelButtonAction {
+        
             let btn = addButton(title, action: cancelButtonAction)
             btn.isCancelButton = true
             return btn
+        
         } else {
-            let btn        = addButton(title)
+        
+            let btn = addButton(title)
             btn.addTarget(self, action:#selector(Hokusai.buttonTapped(_:)), for:.touchUpInside)
             btn.addTarget(self, action:#selector(Hokusai.buttonDarker(_:)), for:.touchDown)
             btn.addTarget(self, action:#selector(Hokusai.buttonLighter(_:)), for:.touchUpOutside)
@@ -379,6 +389,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Add a button just with a title
     fileprivate func addButton(_ title:String) -> HOKButton {
+        
         let btn = HOKButton()
         btn.layer.masksToBounds = true
         btn.setTitle(title, for: UIControlState())
@@ -389,6 +400,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Add a multi-lined message label
     fileprivate func addMessageLabel(_ text: String) -> HOKLabel {
+        
         let label = addLabel(text)
         label.isTitle = false
         return label
@@ -396,6 +408,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Add a multi-lined label just with a text
     fileprivate func addLabel(_ text: String) -> HOKLabel {
+        
         let label = HOKLabel()
         label.layer.masksToBounds = true
         label.textAlignment = .center
@@ -408,12 +421,17 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Show the menu
     public func show() {
+        
         if let rv = UIApplication.shared.keyWindow {
+        
             if rv.viewWithTag(HOKConsts().hokusaiTag) == nil {
+            
                 view.tag = HOKConsts().hokusaiTag.hashValue
                 rv.addSubview(view)
             }
+            
         } else {
+            
             print("Hokusai::  You have to call show() after the controller has appeared.")
             return
         }
@@ -421,35 +439,42 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         // This is needed to retain this instance.
         instance = self
         
-        let colors = (self.colors == nil) ? colorScheme.getColors() : self.colors
+        guard let colors = self.colors == nil ? colorScheme.getColors() : self.colors else {
+            
+            return
+        }
         
         // Set a background color of Menuview
-        menuView.setShapeLayer(colors!)
+        menuView.setShapeLayer(colors)
         
         // Add a cancel button
         let _ = self.addCancelButton(cancelButtonTitle)
         
         // Add a title label when title is set
         if !headline.isEmpty {
+            
             let _ = self.addLabel(headline)
         }
         
         // Add a message label when message is set
         if !message.isEmpty {
+            
             let _ = self.addMessageLabel(message)
         }
 
         // Style buttons
         for btn in buttons {
+            
             btn.layer.cornerRadius = kButtonHeight * 0.5
             btn.setFontName(fontName)
-            btn.setColor(colors!)
+            btn.setColor(colors)
         }
         
         // Style labels
         for label in labels {
-            label.setFontName( label.isTitle ? fontName : lightFontName)
-            label.setColor(colors!)
+            
+            label.setFontName(label.isTitle ? fontName : lightFontName)
+            label.setColor(colors)
         }
         
         // Set frames
@@ -460,16 +485,21 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         
         // Debug
         if (buttons.count == 0) {
+            
             print("Hokusai::  The menu has no item yet.")
+        
         } else if (buttons.count > 6) {
+        
             print("Hokusai::  The menu has lots of items.")
         }
     }
     
     // Add an animation when showing the menu
     fileprivate func animationWillStart() {
+        
         // Background
         self.view.backgroundColor = UIColor.clear
+        
         UIView.animate(withDuration: HOKConsts().animationDuration * 0.4,
             delay: 0.0,
             options: UIViewAnimationOptions.curveEaseOut,
@@ -497,6 +527,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
     // Dismiss the menuview
     @objc public func dismissHokusai() {
+        
         // Background and Menuview
         UIView.animate(withDuration: HOKConsts().animationDuration,
             delay: 0.0,
@@ -504,38 +535,53 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
             initialSpringVelocity: 0.6,
             options: [.beginFromCurrentState, .allowUserInteraction, .overrideInheritedOptions, .curveEaseOut],
             animations: {
+                
                 self.view.backgroundColor = UIColor.clear
                 self.menuView.frame       = CGRect(origin: CGPoint(x: 0.0, y: self.view.frame.height), size: self.menuView.frame.size)
             },
             completion: {(finished) in
+                
                 self.view.removeFromSuperview()
         })
+        
         menuView.positionAnimationWillStart()
     }
     
     // When a button is tapped, this method is called.
     func buttonTapped(_ btn:HOKButton) {
-        if btn.actionType == HOKAcitonType.closure {
+        
+        switch btn.actionType {
+            
+        case .closure:
+            
             btn.action()
-        } else if btn.actionType == HOKAcitonType.selector {
+
+        case .selector:
+            
             let control = UIControl()
             control.sendAction(btn.selector, to:btn.target, for:nil)
-        } else {
+
+        case .none:
+            
             if !btn.isCancelButton {
+                
                 print("Unknow action type for button")
             }
         }
+        
         dismissHokusai()
     }
     
 
     // Make the buttons darker when user tapping.
     func buttonDarker(_ btn:HOKButton) {
+        
         btn.backgroundColor = btn.backgroundColor!.darkerColorWithPercentage(0.2)
     }
 
     // Make the buttons lighter when user release finger.
     func buttonLighter(_ btn:HOKButton) {
+        
         btn.backgroundColor = btn.backgroundColor!.lighterColorWithPercentage(0.2)
     }
 
@@ -544,23 +590,32 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
 extension UIColor {
 
     func lighterColorWithPercentage(_ percent : Double) -> UIColor {
-        return colorWithBrightness(CGFloat(1 + percent));
+        
+        return colorWithBrightness(CGFloat(1 + percent))
     }
 
     func darkerColorWithPercentage(_ percent : Double) -> UIColor {
-        return colorWithBrightness(CGFloat(1 - percent));
+        
+        return colorWithBrightness(CGFloat(1 - percent))
     }
 
     func colorWithBrightness(_ factor: CGFloat) -> UIColor {
-        var hue : CGFloat = 0
-        var saturation : CGFloat = 0
-        var brightness : CGFloat = 0
-        var alpha : CGFloat = 0
+        
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
 
         if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-            return UIColor(hue: hue, saturation: saturation, brightness: brightness * factor, alpha: alpha)
+            
+            return UIColor(hue: hue,
+                           saturation: saturation,
+                           brightness: brightness * factor,
+                           alpha: alpha)
+            
         } else {
-            return self;
+            
+            return self
         }
     }
 }
