@@ -2,7 +2,7 @@
 
 Hokusai is a Swift library that provides a bouncy action sheet.  
 It will give the users a fancy experience without taking pains coding the cool animation.  
-Hokusai is compatible with Swift2.2!!
+Hokusai is compatible with Swift3.
 
 [![Version](https://img.shields.io/cocoapods/v/Hokusai.svg?style=flat)](http://cocoapods.org/pods/Hokusai)
 [![Platform](https://img.shields.io/cocoapods/p/Hokusai.svg?style=flat)](http://cocoapods.org/pods/Hokusai)
@@ -129,7 +129,10 @@ hokusai.colors = HOKColors(
 
 ## Author
 ytakzk  
- [http://ytakzk.me](http://ytakzk.me)
+ [https://ytakzk.me](https://ytakzk.me)
+ 
+## Donation
+Your support is welcome through Bitcoin 3Ps8tBgz4qn6zVUr5D1wcYrrzYjMgEugqv
  
 ## License
 Hokusai is released under the MIT license.  
