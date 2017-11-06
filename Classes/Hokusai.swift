@@ -209,7 +209,7 @@ final public class HOKMenuView: UIView {
         shapeLayer.path = path.cgPath
     }
     
-    func tick(_ displayLink: CADisplayLink) {
+    @objc func tick(_ displayLink: CADisplayLink) {
 
 
 
@@ -292,7 +292,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
         self.message  = message
     }
     
-    func onOrientationChange(_ notification: Notification) {
+    @objc func onOrientationChange(_ notification: Notification) {
         self.updateFrames()
         self.view.layoutIfNeeded()
     }
@@ -548,7 +548,7 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // When a button is tapped, this method is called.
-    func buttonTapped(_ btn:HOKButton) {
+    @objc func buttonTapped(_ btn:HOKButton) {
         
         switch btn.actionType {
             
@@ -574,13 +574,13 @@ final public class Hokusai: UIViewController, UIGestureRecognizerDelegate {
     
 
     // Make the buttons darker when user tapping.
-    func buttonDarker(_ btn:HOKButton) {
+    @objc func buttonDarker(_ btn:HOKButton) {
         
         btn.backgroundColor = btn.backgroundColor!.darkerColorWithPercentage(0.2)
     }
 
     // Make the buttons lighter when user release finger.
-    func buttonLighter(_ btn:HOKButton) {
+    @objc func buttonLighter(_ btn:HOKButton) {
         
         btn.backgroundColor = btn.backgroundColor!.lighterColorWithPercentage(0.2)
     }

@@ -122,7 +122,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,
 
 	}
 
-	func button2Pressed() {
+	@objc func button2Pressed() {
 		print("Oribe")
 	}
 
